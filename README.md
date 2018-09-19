@@ -25,6 +25,9 @@ var commands = {};
   });
   
   for (var key in commands) {
+    if (!!!commands[key] || typeof(commands[key]) !== "function") {
+      continue;
+    }
     commands[key]();
   }
 })();

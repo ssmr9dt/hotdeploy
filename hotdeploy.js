@@ -8,10 +8,7 @@ module.exports = function(pattern, cb) {
     files.forEach(function(element, index, array){
       var key = path.basename(element,path.extname(element));
       hotreload(element, function(error, module){
-        if (!!error) { return; }
-        if (!!module) {
-          cb(key, module);
-        }
+        cb(key, module);
       });
     });
   });

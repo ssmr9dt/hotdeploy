@@ -1,4 +1,4 @@
-const hotdeploy = require("../hotdeploy.js");
+const hotdeploy = require(__dirname + "/../hotdeploy.js");
 
 var commands = {};
 
@@ -15,6 +15,9 @@ var commands = {};
   });
   
   for (var key in commands) {
+    if (!!!commands[key] || typeof(commands[key]) !== "function") {
+      continue;
+    }
     commands[key]();
   }
 })();

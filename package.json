@@ -1,6 +1,6 @@
 {
   "name": "@ssmr9dt/hotdeploy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "auto reload commands",
   "main": "hotdeploy.js",
   "scripts": {
@@ -29,6 +29,6 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ssmr9dt/hotdeploy.git"
+    "url": "https://github.com/ssmr9dt/hotdeploy.git"
   }
 }
