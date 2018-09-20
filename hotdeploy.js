@@ -5,7 +5,7 @@ const hotreload = require("@ssmr9dt/hotreload"),
 
 
 module.exports = function(dir, cb) {
-  if (dir.length-1 !== dir.lastIndexOf("/")) {
+  if (dir.length-1 !== dir.lastIndexOf("/")) { // required fix - for windows
     dir += "/";
   }
   var reload = function(filename, cb) {
@@ -22,7 +22,7 @@ module.exports = function(dir, cb) {
   });
   
   fs.watch(dir, function(event, filename){
-    var abspath = dir+filename;
+    var abspath = dir+filename; // required fix - smart
     reload(abspath, cb);
   });
   
