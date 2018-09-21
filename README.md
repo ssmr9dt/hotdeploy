@@ -16,13 +16,13 @@ Please reference test/example.js
 const hotdeploy = require("@ssmr9dt/hotdeploy.js");
 var commands = {};
 
+hotdeploy(__dirname + "/server.d", function(key, module){
+  console.log("Reload", key);
+  commands[key] = module || null;
+});
+
 (function _Exec(){
   setTimeout(_Exec, 1000);
-  
-  hotdeploy(__dirname + "/server.d/*.js", function(key, module){
-    console.log("Reload ",key);
-    commands[key] = module || null;
-  });
   
   for (var key in commands) {
     if (!!!commands[key] || typeof(commands[key]) !== "function") {
