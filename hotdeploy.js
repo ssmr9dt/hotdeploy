@@ -5,8 +5,8 @@ const hotreload = require("@ssmr9dt/hotreload"),
 
 
 module.exports = function(dir, cb) {
-  if (dir.length-1 !== dir.lastIndexOf("/")) { // required fix - for windows
-    dir += "/";
+  if (path.isAbsolute(dir) === false) {
+    dir = path.resolve(dir);
   }
   var reload = function(filename, cb) {
     const key = path.basename(filename,path.extname(filename));
@@ -14,7 +14,7 @@ module.exports = function(dir, cb) {
       cb(key, module);
     });
   };
-  glob(dir + "/*", {"nodir": true}, function(err, files){
+  glob(path.join(dir,"*"), {"nodir": true}, function(err, files){
     if (!!err) { return; }
     files.forEach(function(element, index, array){
       reload(element, cb);
@@ -22,7 +22,7 @@ module.exports = function(dir, cb) {
   });
   
   fs.watch(dir, function(event, filename){
-    var abspath = dir+filename; // required fix - smart
+    var abspath = path.join(dir,filename); // required fix - smart
     reload(abspath, cb);
   });
   
