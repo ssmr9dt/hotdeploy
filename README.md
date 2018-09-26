@@ -38,4 +38,4 @@ echo "module.exports = function(){console.log(\"execute red.js\")};" > server.d/
 ```
 
 ## Image
-![Gif](https://raw.githubusercontent.com/wiki/ssmr9dt/hotdeploy/images/ssmr9dt-hotdeploy.gif)
+[![Gif](https://raw.githubusercontent.com/wiki/ssmr9dt/hotdeploy/images/ssmr9dt-hotdeploy.gif)](https://www.youtube.com/watch?v=MjSkpQ9Eq9I)
