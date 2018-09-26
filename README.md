@@ -37,3 +37,5 @@ hotdeploy(__dirname + "/server.d", function(key, module){
 echo "module.exports = function(){console.log(\"execute red.js\")};" > server.d/red.js
 ```
 
+## Image
+![Gif](https://raw.githubusercontent.com/wiki/ssmr9dt/hotdeploy/images/ssmr9dt-hotdeploy.gif)
